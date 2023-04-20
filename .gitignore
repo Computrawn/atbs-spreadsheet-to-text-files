@@ -3,4 +3,6 @@
 *.pyc
 .idea
 logging.txt
+text*.txt
+*.xlsx
 venv
