@@ -17,9 +17,9 @@ file_name = f'{input("Please enter file name here: ")}'
 plus_extension = f"{file_name}.xlsx"
 
 
-def open_workbook(file_name):
+def open_workbook(file):
     """Open user-designated Excel file in current directory and return its sheet contents."""
-    workbook = openpyxl.load_workbook(filename=file_name)
+    workbook = openpyxl.load_workbook(filename=file)
     sheet = workbook.active
     return sheet
 
