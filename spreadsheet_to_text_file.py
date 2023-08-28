@@ -15,14 +15,15 @@ logging.disable(logging.CRITICAL)  # Note out to enable logging.
 
 
 def main() -> None:
-    """Runs functions in sequence on user-defined input."""
+    """Runs functions in sequence on user-designated file."""
     file_name = input("Please enter file name here: ")
     file_contents = record_contents(file_name)
     write_contents(file_contents, file_name)
 
 
 def record_contents(file: str) -> list[list[str]]:
-    """Open user-designated Excel file in current directory and record contents of rows per column of sheet into a list of lists, then return list."""
+    """Open Excel file in current directory and record contents of
+    rows per column of sheet into a list of lists, then return list."""
     sheet = load_workbook(f"{file}.xlsx").active
     return [
         [
