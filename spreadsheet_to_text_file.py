@@ -18,7 +18,7 @@ def main() -> None:
     """Runs functions in sequence on user-designated file."""
     file_name = input("Please enter file name here: ")
     file_contents = record_contents(file_name)
-    write_contents(file_contents, file_name)
+    write_contents(file_contents)
 
 
 def record_contents(file: str) -> list[list[str]]:
@@ -35,10 +35,10 @@ def record_contents(file: str) -> list[list[str]]:
     ]
 
 
-def write_contents(contents: str, file_name: str) -> None:
+def write_contents(contents: str) -> None:
     """Write contents of each line of secondary list to file associated with primary list value."""
     for i, _ in enumerate(contents):
-        with open(f"{file_name}_column{(i + 1):03}.txt", "w", encoding="utf-8") as txt:
+        with open(f"text_of_column{(i + 1):03}.txt", "w", encoding="utf-8") as txt:
             for j, _ in enumerate(contents[i]):
                 txt.write(str(contents[i][j]))
 
